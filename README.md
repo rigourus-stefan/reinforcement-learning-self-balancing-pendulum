@@ -1,5 +1,5 @@
 # reinforcement-learning-self-balancing-pendulum
-I solved the inverted pendulum problem using machine learning building the neural network from scratch
+I solved the inverted pendulum problem by using a feedforward network implementing forward propogation and backward propogation
 
 Formulas used in the project:
 He initialisation formula - 
