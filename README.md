@@ -1,5 +1,5 @@
 # I created a self balancing pendulum using reinforcment learning
-I solved the inverted pendulum problem by using a Deep Q network implementing forward propogation and backward propogation, in my previous pendulum project 
+I solved the inverted pendulum problem by using a Deep Q network implementing forward propogation and backward propogation.
 
 # The learning process
 
