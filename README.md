@@ -1,7 +1,55 @@
 # I created a self balancing pendulum using reinforcment learning
 I solved the inverted pendulum problem by using a Deep Q network implementing forward propogation and backward propogation.
 
+Ive found that in my case, steps bettween 500 to 1000 is where the pendulum can balance perfectly when switched to test mode
+
+# How it works
+    Space key - Pause
+    
+    T key - switch from train to test / test to train
+    
+    F key - Speed up the learning process
+
+
 # The learning process
+
+As soon as your code runs, the network has 3 options -  move left, move right or not move at all.
+
+***Initial State:***
+
+  The network starts with completely random weights, so it has no idea what to do. It's like a baby learning to walk - it makes random guesses and learns from the results.
+
+1. Exploration vs exploitation
+
+The agent uses an epsilon-greedy strategy. At first (ε = 100%), it explores by taking completely random actions. As training progresses, epsilon decays to 1%, meaning it increasingly exploits what it has learned. This balance ensures it discovers good strategies early on while eventually settling into optimal behavior.
+
+2. Experience replay
+
+Every action the agent takes is stored in a memory buffer (max 50,000 experiences). During training, it randomly samples batches of 64 past experiences. This breaks correlations between consecutive states and makes learning more stable - it's like studying from shuffled flashcards instead of reading the same chapter repeatedly.
+
+3. The reward signal
+
+The agent receives +1 for every timestep it stays balanced and -10 when it falls. That's the only supervision it gets. Using the Bellman equation, it learns to propagate these rewards backwards through time, discovering that falling is bad and standing up is good.
+
+4. Credit assignment
+
+When the agent falls, the DQN algorithm traces back through recent experiences and updates Q-values for states that led to the failure. States further from the failure get smaller updates (scaled by γ = 0.99). This teaches the network to predict not just immediate rewards, but cumulative future rewards.
+
+5. Target network
+
+The agent maintains two networks - a main network that's constantly updated, and a target network that's only synced every 5 episodes. This stabilizes training by preventing the "moving target" problem where the network chases its own changing predictions.
+
+6. Improvements over time
+
+****For an average run****
+
+    Episodes 1-50: Random flailing, falls quickly
+
+    Episodes 50-200: Discovers that keeping θ ≈ 0 is good
+    
+    Episodes 200-500: Learns smooth corrective actions
+    
+    Episode 500+: Masters the task, can balance indefinitely
 
 
 # Formulas used in the project:
