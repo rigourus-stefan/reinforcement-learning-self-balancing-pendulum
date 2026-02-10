@@ -1,7 +1,7 @@
 # I created a self balancing pendulum using reinforcment learning
 I solved the inverted pendulum problem by using a Deep Q network implementing forward propogation and backward propogation.
 
-Ive found that in my case, steps bettween 500 to 1000 is where the pendulum can balance perfectly when switched to test mode
+Ive found that in my case, steps between 500 to 1000 is where the pendulum can balance perfectly when switched to test mode
 
 # How it works
     Space key - Pause
