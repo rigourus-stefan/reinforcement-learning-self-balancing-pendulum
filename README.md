@@ -74,9 +74,8 @@ The agent maintains two networks - a main network that's constantly updated, and
     Episode 500+: Masters the task, can balance indefinitely
 
 
-## Idea
-   During the development process...
-
+## Important ideas
+During the development process i had an idea of minimising the amount of times the network pushes left and right and maximising the amount of time the pendulum is up the way i did this was through the way i rewarded the network - r = 1.0 - 0.3 * (self.x / 2.5)**2 - 0.2 * (self.x_dot / 5)**2 - This replaced the original r = 1.0. The idea was to penalise the cart for drifting from centre and for moving fast, so the agent learns smoother, more minimal corrections. The reason i did this was to solve the problem of chaotic balancing.
 
 # Formulas used in the project:
 ----
