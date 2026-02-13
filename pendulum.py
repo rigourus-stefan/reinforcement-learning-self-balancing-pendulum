@@ -1,6 +1,6 @@
 """
 DQN (Deep Q-Network) Inverted Pendulum Problem
-================================================
+
 A reinforcement learning agent that learns to balance an inverted pendulum on a cart,
 built from scratch using NumPy (no ML frameworks such as PyTorch or TensorFlow).
 
