@@ -8,7 +8,7 @@ pip install pygame
 
 I solved the inverted pendulum problem using reinforcement learning, implementing a Deep Q-Network with forward propagation and backward propagation entirely from scratch — no ML frameworks.
 
-This is my most recent design, previously I have built the same network but it took longer to train.
+This is my most recent design, previously I have built the same network but it took longer to train and was inefficient.
 
 ## The Problem
 
